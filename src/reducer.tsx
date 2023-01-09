@@ -1,9 +1,9 @@
 export const initialState = {
-  useLightTheme:true
+  useLight:true
 };
 
 export interface ThemeProps{
-	state:{useLightTheme:boolean};
+	state:{useLight:boolean};
 	dispatch:Function;
 }
 export const ThemeInitializer = {
@@ -14,9 +14,13 @@ export const ThemeInitializer = {
 export default function reducer(state:{useLightTheme:boolean}, action:{type:string,value:boolean}) {
   switch (action.type) {
   	case "setTheme":
-		return {...state, useLightTheme: action.value}
+		return {...state, useLight: action.value}
 	case "toggleTheme":
-		return {...state, useLightTheme: !state.useLightTheme}
+		return {...state, useLight: !state.useLight}
+	case "setDark":
+		return {...state, useLight: false}
+	case "setLight":
+		return {...state, useLight: true}
   /*
     case "setTheme":
       return { ...state, currentTheme: action.value };

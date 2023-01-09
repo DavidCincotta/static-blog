@@ -4,22 +4,28 @@ import reducer from './reducer'
 export default function UserTheme(){
 	const {state,dispatch} = useContext(ThemeContext)
 	
-	const setTheme = (useLightMode:boolean) => {
-		dispatch({ type: "setTheme", value:useLightMode});
+	const setTheme = (useLight:boolean) => {
+		dispatch({ type: "setTheme", value:useLight});
+	};
+	const setDark = () => {
+		dispatch({ type: "setDark"});
+	};
+	const setLight = () => {
+		dispatch({ type: "setLight"});
 	};
 
 	useEffect(()=>{
-		let userPref = !window.matchMedia('(prefers-color-scheme: dark)').matches
-		let userChoice = localStorage.getItem("useLightThemeUserChoice")
-
-		if(userChoice === null) {
-			setTheme(userPref);
-			localStorage.setItem("useLightThemeUserChoice",userPref.toString());
+		let userPrefDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+		if(userPrefDark){
+		  document.documentElement.classList.add('dark')
+		  setDark();
+		  return
 		}
-		else
-			{
+		if(userChoice === null && !userPrefDark){
+		  return
 		}
-	})
+		
+	},[])
 
 	return (<></>)
 

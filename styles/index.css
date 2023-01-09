@@ -1,0 +1,58 @@
+@import "tailwindcss/base";
+@import "./custom-base-styles.css";
+
+@import "tailwindcss/components";
+@import "./custom-components.css";
+
+@import "tailwindcss/utilities";
+@import "./custom-utilities.css";
+
+.gradient-animation {
+  animation: reset 2s linear infinite;
+  
+}
+.gradient-animation:hover {
+  animation: gradient-stroke-animation 200ms linear 1;
+}
+
+@keyframes gradient-stroke-animation {
+  0% {
+    stroke: theme('colors.darkTextPrimary');
+  }
+  33% {
+    stroke: theme('colors.darkError');
+  }
+  100% {
+    stroke: theme('colors.darkTextPrimary');
+  }
+}
+
+@keyframes reset {
+}
+
+
+.transitionAll{
+  transition: color 1s ease-in-out;
+}
+
+.animateReader{
+	animation: animate-reader-keys linear 3s;
+	text: transparent;
+	background: bg-clip-text;
+}
+@keyframes animate-reader-keys {
+	0%{
+		color: red;
+	}
+	100% {
+		color: white;
+	}
+}
+.bg-clip-text-custom {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-clip-text-custom.gradient {
+  background-color: linear-gradient(to right, red, yellow);
+}
