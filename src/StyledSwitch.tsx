@@ -9,9 +9,9 @@ import { ThemeContext } from '../pages/_app'
 import reducer from './reducer'
 export default function StyledSwitch(){
 	const {state,dispatch} = useContext(ThemeContext)
-	const setDark = (useLight:boolean) => {
-		dispatch({ type: "setDark", value:false });
-	};
+		const setDark = (useLight:boolean) => {
+			dispatch({ type: "setDark", value:false });
+		};
 	const setLight = (useLight:boolean) => {
 		dispatch({ type: "setLight", value:true });
 	};
@@ -20,24 +20,22 @@ export default function StyledSwitch(){
 	}
 	const toggleTheme = () => {
 		document.documentElement.classList.toggle("dark")
+		if(document.cookie==='true')document.cookie='false'
+		else document.cookie='true'
 		dispatch({type: "toggleTheme"})
-		
 	};
-
-
-return(
-
-<>
-<Switch 
-	size="medium"
-	checked={!state.useLight}
-	icon={<DarkMode sx={{color:"black", transform:"translate(0,-2px)",}} />}
-	checkedIcon={<LightMode sx={{ color:"white", transform:"translate(0,-2px)",}} />}
-	onChange={()=>{toggleTheme()}}
-	disableRipple={true}
-	color="secondary"
-/>
-</>
-	
-	)
+	return(
+			<>
+			<Switch
+			size="medium"
+			checked={!state.useLight}
+			icon={<DarkMode sx={{color:"black", transform:"translate(0,-2px)",}} />}
+			checkedIcon={<LightMode sx={{ color:"white", transform:"translate(0,-2px)",}} />}
+			onChange={()=>{toggleTheme()}}
+			disableRipple={true}
+			color="secondary"
+			sx={{transform:"translate(0,-4px)",}}
+			/>
+			</>
+		  )
 }

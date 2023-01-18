@@ -8,23 +8,23 @@
 @import "./custom-utilities.css";
 
 .gradient-animation {
-  animation: reset 2s linear infinite;
-  
+	animation: reset 2s linear infinite;
+
 }
 .gradient-animation:hover {
-  animation: gradient-stroke-animation 200ms linear 1;
+	animation: gradient-stroke-animation 200ms linear 1;
 }
 
 @keyframes gradient-stroke-animation {
-  0% {
-    stroke: theme('colors.darkTextPrimary');
-  }
-  33% {
-    stroke: theme('colors.darkError');
-  }
-  100% {
-    stroke: theme('colors.darkTextPrimary');
-  }
+	0% {
+		stroke: theme('colors.darkTextPrimary');
+	}
+	33% {
+		stroke: theme('colors.darkError');
+	}
+	100% {
+		stroke: theme('colors.darkTextPrimary');
+	}
 }
 
 @keyframes reset {
@@ -32,7 +32,7 @@
 
 
 .transitionAll{
-  transition: color 1s ease-in-out;
+	transition: color 1s ease-in-out;
 }
 
 .animateReader{
@@ -49,10 +49,11 @@
 	}
 }
 .bg-clip-text-custom {
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
 }
 .bg-clip-text-custom.gradient {
-  background-color: linear-gradient(to right, red, yellow);
+	background-image: linear-gradient(45deg,#ff00ff, #2EA1D8);
+	font-weight: 600;
 }

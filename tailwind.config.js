@@ -1,14 +1,14 @@
 /**@type {import('tailwindcss').Config} */
 module.exports= {
-darkMode: 'class',
+	darkMode: 'class',
 	corePlugins:{
-		preflight:false, 
+		preflight:true,
 	},
 	content: ["./app/**/*.{js,ts,jsx,tsx}","./pages/**/*.{js,ts,jsx,tsx}","./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		colors: {
 			lightBackground:		'#ffffff', //
-			darkBackground:			'#000000', //
+			darkBackground:			'#222222', //
 			lightPrimary:			'#ffc107', //
 			lightPrimaryDark:		'#b28704', //
 			lightPrimaryLight:		'#fff350', //
@@ -52,11 +52,13 @@ darkMode: 'class',
 			lightTextDisabled:		'#666666', //
 			darkTextDisabled:		'#aaaaaa', //
 			purpleBright:			'#ff00ff', //
-			purpleDark:				'#aa00aa', //
+			purpleLight:			'#aa00aa', //
+			purpleDark:				'#440044', //
 			blueBright:				'#0000ff', //
 			blueDark:				'#0000aa', //
 		},
-		extend: {},
+		extend: {
+		},
 	},
 	plugins: [],
 }

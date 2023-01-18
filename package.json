@@ -1,42 +1,46 @@
 {
-  "name": "nextjs-with-typescript",
-  "version": "5.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "sudo next dev",
-    "lint": "sudo next lint",
-    "build": "sudo next build",
-    "start": "sudo next start",
-    "export": "sudo next export",
-    "dev80": "sudo next dev -p 80",
-    "start80": "sudo next start -p 80",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
-  },
-  "dependencies": {
-    "@emotion/cache": "latest",
-    "@emotion/react": "latest",
-    "@emotion/server": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "latest",
-    "@mui/joy": "^5.0.0-alpha.61",
-    "@mui/material": "latest",
-    "@next/font": "latest",
-    "markdown-to-jsx": "^7.1.8",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-icons": "^4.7.1"
-  },
-  "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "autoprefixer": "^10.4.13",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "postcss": "^8.4.21",
-    "postcss-import": "^15.1.0",
-    "postcss-nesting": "^10.2.0",
-    "tailwindcss": "^3.2.4",
-    "typescript": "latest"
-  }
+	"name": "nextjs-with-typescript",
+	"version": "5.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "sudo next dev",
+		"lint": "sudo next lint",
+		"build": "sudo next build",
+		"start": "sudo next start",
+		"export": "sudo next export",
+		"dev80": "sudo next dev -p 80",
+		"start80": "sudo next start -p 80",
+		"post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+	},
+	"dependencies": {
+		"@emotion/cache": "latest",
+		"@emotion/react": "latest",
+		"@emotion/server": "latest",
+		"@emotion/styled": "latest",
+		"@mui/icons-material": "latest",
+		"@mui/joy": "^5.0.0-alpha.61",
+		"@mui/material": "latest",
+		"@next/font": "latest",
+		"@types/prismjs": "^1.26.0",
+		"markdown-to-jsx": "^7.1.8",
+		"next": "latest",
+		"prismjs": "^1.29.0",
+		"react": "latest",
+		"react-dom": "latest",
+		"react-icons": "^4.7.1",
+		"react-syntax-highlighter": "^15.5.0"
+	},
+	"devDependencies": {
+		"@types/node": "latest",
+		"@types/react": "latest",
+		"@types/react-syntax-highlighter": "^15.5.6",
+		"autoprefixer": "^10.4.13",
+		"eslint": "latest",
+		"eslint-config-next": "latest",
+		"postcss": "^8.4.21",
+		"postcss-import": "^15.1.0",
+		"postcss-nesting": "^10.2.0",
+		"tailwindcss": "^3.2.4",
+		"typescript": "latest"
+	}
 }

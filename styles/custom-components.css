@@ -1,0 +1,106 @@
+.cursor::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: #fff;
+  animation: cursor 0.6s linear infinite alternate;
+  will-change: opacity;
+}
+@keyframes cursor {
+  0%,
+  40% {
+    opacity: 1;
+  }
+
+  60%,
+  100% {
+    opacity: 0;
+  }
+}
+.wave {
+  animation: wave 2s linear;
+  transform-origin: bottom;
+}
+.wave:hover {
+  animation: wave 2s linear infinite;
+  transform-origin: bottom;
+}
+@keyframes wave {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  10% {
+    transform: translateY(-6px) rotate(-5deg);
+  }
+  20% {
+    transform: translateY(0) rotate(3deg);
+  }
+  30% {
+    transform: translateY(-2px) rotate(-3deg);
+  }
+  40% {
+    transform: translateY(0) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(-1deg);
+  }
+  60% {
+    transform: translateY(0) rotate(1deg);
+  }
+  70% {
+    transform: translateY(-1px) rotate(-1deg);
+  }
+  80% {
+    transform: translateY(0) rotate(1deg);
+  }
+  90% {
+    transform: translateY(-1px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.animateReader{
+	color: transparent;
+	text: transparent;
+	font-weight:600;
+	background: bg-clip-text;
+	background-image: linear-gradient(45deg,#ff00ff, #ffffff);
+	-webkit-background-clip: text;
+}
+.darkAnimateReader{
+	color: transparent;
+	text: transparent;
+	font-weight:600;
+	background: bg-clip-text;
+	background-image: linear-gradient(45deg,#ff00ff, #ffff00);
+	-webkit-background-clip: text;
+}
+/* clip text with background image
+ * 
+ *
+ * */
+@keyframes animateReaderColor {
+	0%{
+		opacity:1; 
+	}
+	50% {
+		opacity:0; 
+	}
+	100% {
+		opacity:1; 
+	}
+}
+@keyframes animateReaderColor {
+	0%{
+		background-image:purple; 
+	}
+	50% {
+		background-image:red; 
+	}
+	100% {
+		background-image:purple; 
+	}
+}

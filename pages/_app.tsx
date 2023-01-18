@@ -26,12 +26,10 @@ export default function MyApp(props: MyAppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-	  <ThemeProvider theme={ useLight? LightTheme : DarkTheme }>
 	  <ThemeContext.Provider value={{state,dispatch}}>
         <CssBaseline />
         <Component {...pageProps} />
 		</ThemeContext.Provider>
-      </ThemeProvider>
     </CacheProvider>
   );
 }

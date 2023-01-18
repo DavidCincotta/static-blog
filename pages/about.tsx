@@ -5,29 +5,18 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Link from '../src/Link';
 import ProTip from '../src/ProTip';
+import Header from '../src/Header';
+import Footer from '../src/Footer';
 
 export default function About() {
+		const linkClass=" text-sm transition duration-300 text-purpleDark hover:text-[#2EA1D8] dark:text-darkError dark:hover:text-darkInfo "
   return (
+    <>
+	<Header />
     <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Box maxWidth="sm">
-          <Button variant="contained" component={Link} noLinkStyle href="/">
-            Go to the home page
-          </Button>
-        </Box>
-        <ProTip />
-      </Box>
+		<Link href="/" className={linkClass}> Go to the index page </Link>
     </Container>
+	<Footer />
+	</>
   );
 }
