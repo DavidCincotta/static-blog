@@ -1,52 +1,73 @@
-import React, {useEffect,useContext, useState} from 'react';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import Link from '../src/Link';
-import Grid from '@mui/material/Grid';
-import Divider from '@mui/material/Divider';
-import {useTheme,Theme} from '@mui/material/styles';
-import { ThemeContext } from '../pages/_app'
-import Header from '../src/Header'
-import Footer from '../src/Footer'
-import CodeBlock from '../src/CodeBlock'
-async function handleCodeClick(text:string|null){
-	console.log('handleCodeClick()')
-		await navigator.clipboard.writeText(text!);
-}
-export default function Home(){
-const [charIndex, setCharIndex] = useState(0);
+import Header from '../src/Header';
+import Footer from '../src/Footer'; import {useEffect, useRef} from 'react';
+import {Wakatime} from '../src/Wakatime'
+import {Typewriter} from '../src/Typewriter'
+import {Spotify} from '../src/Spotify'
+import {downarrow} from '../src/CustomSVG'
 
-	const {state,dispatch} = useContext(ThemeContext);
-		const headingClass = " tracking-wide text-2xl text-lightTextPrimary dark:text-darkTextPrimary transition duration-300 place-self-center ring-3"
-		//const animateReader= " dark:darkAnimateReader animateReader w-2/5 "
-		//const animateReader= " bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-white-500 w-2/5 "
-		const animateReader= "place-self-start transition duration-300 text-5xl font-extrabold text-transparent bg-clip-text-custom bg-gradient-to-r from-purpleDark to-purpleBright dark:from-purpleBright dark:to-darkError w-fit";
-		const linkClass=" text-sm transition duration-300 text-purpleDark hover:text-[#2EA1D8] dark:text-darkError dark:hover:text-darkInfo ";
-		const titleLinkClass=" text-sm transition duration-300 text-lightTextPrimary hover:text-purpleDark hover:dark:text-darkError dark:text-darkTextPrimary dark:hover:text-darkWarning ";
-		return(
-				<>
-				<Header />
-				<div className="flex flex-col items-center">
-				<div className="IndexMainContent ring-1 w-screen md:w-[95%] pl-5 pr-5">
-				<div className="flex flex-col items-center">
-				<div className="w-2/3 ring-1">
-				<div className="flex flex-row">
-				<p className={animateReader+" ring-1"}>Hello</p>
-				<p className="text-5xl wave">{`⠀👋`}</p>
+async function sleep(ms: number) {
+	return new Promise(resolve => setTimeout(resolve, ms))
+}
+export default function Home() {
+	const curRef = useRef(false)
+	let introScriptStringDesktop =
+`
+ 
+My name is David, I'm a developer who loves to build things, be it with code, wood, or leather.
+When I'm not at my desk, you can find me at the climbing gym or most likely coding at the library. 
+ 
+Recently I've been learning front-end and solving LeetCode problems.
+My next personal project involves creating a prompting pipeline for LLMs.
+ 
+This is my first website build from scratch, so email me your feedback.
+ 
+Thanks for visiting!
+`;
+	let introScriptStringMobile =
+`
+ 
+My name is David, When
+I'm not at my desk, 
+you can find me at the 
+climbing gym or a café
+ 
+Thanks for visiting!
+`;
+	return (
+		<>
+			<Header />
+			<div className="z-[100] IndexMainContent w-screen md:w-95% pl-5 pr-5 overflow-scroll p-1 text-lightTextPrimary dark:text-darkTextPrimary">
+				<div className="grid grid-cols-10 p-5 rounded-[10px] gap-5 mobile:block">
+					<div className="col-span-8 col-start-1 row-span-auto m-[10px] mobile:mb-8">
+					<p className="text-3xl">Hello,</p>
+					<Typewriter className="mobile:h-[180px]" waitTime={500} keySpeed={20} punctuationSpeed={200} script={introScriptStringDesktop} scriptMobile={introScriptStringMobile} />
+					</div>
+					<div className="col-start-9 col-span-2 grid place-self-start mobile:block">
+					<img className="rounded-[10px] h-[400px] mobile:mx-auto" src="/fullbodyshot2.png" style={{ objectFit: "cover" }} />
+					</div>
+					<div className="col-span-8 mobile:my-8">
+					<p className="text-3xl">About</p>
+					<br />
+					<p>I graduated in January 2023 from the University of Massachusetts Amherst with a BS in Computer Science. The best way to contact me is through email.</p>
+					</div>
+					<div className=" pb-3 col-span-2 rounded-[10px] h-fit ring-1 ring-black dark:ring-white">
+					<Footer />
+					</div>
+					<div className="mobile:invisible col-span-10 h-[40px]">
+					<br />
+					{downarrow}
+					<br />
+					</div>
+					<div className="desktop:invisible desktop:FADEINWITHSPOTIFY col-span-8 rounded-[10px] ring-1 ring-black dark:ring-white overflow-hidden mr-[50px] w-full mobile:block mobile:m-0 mobile:h-full mobile:mt-6">
+					<Wakatime />
+					</div>
+					<div className="col-start-9 col-span-2 w-full place-self-start mobile:block mobile:mt-6 mobile:mx-auto TODO SPOTIFY">
+					<br />
+					<Spotify />
+					</div>
 				</div>
-				<p className={headingClass}>I'm David, am a Junior Developer passionate about Linux, interested AWS, and capable of full stack development. In my free time, I enjoy reading, climbing, and creating things with my hands.</p>
-				</div>
-				</div>
-				<div className="flex place-content-center">
-				<CodeBlock text={ `const a = Array(10).map((b)=>{console.log(b)});\necho;\nimport hello world\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nconsole.log('hello world')\necho $TERM`} />
-				<CodeBlock text={ `import hello world\nconsole.log('hello world')\necho $TERM` } />
-				</div>
-				<CodeBlock text={ `import hello world\nconsole.log('hello world')\necho $TERM` } />
-				<CodeBlock addClass="w-min" text={ `const a = Array(10).map((b)=>{console.log(b)});\necho;\nimport hello world\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nconsole.log('hello world')\necho $TERM`} />
-				<Link href="/about" className={linkClass}> Go to the about page </Link>
-				</div>
-				</div>
-				<Footer />
-				</>
-			  );
+			</div>
+			<Footer />
+		</>
+	); 
 }

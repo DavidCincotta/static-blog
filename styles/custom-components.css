@@ -1,66 +1,113 @@
-.cursor::after {
-  display: block;
+.spotify-top{
+  animation: squeeze1 2s linear infinite;
+  animation-play-state:running;
+  transform-origin:center;
+}
+.spotify-middle{
+  animation: squeeze2 2s linear infinite;
+  animation-play-state:running;
+  transform-origin:center;
+}
+.spotify-bottom{
+  animation: squeeze3 2s linear infinite;
+  animation-play-state:running;
+  transform-origin:center;
+}
+@keyframes squeeze1{
+	0%{transform:  scaleX(1.0);}
+	10%{transform: scaleX(0.9);}
+	20%{transform: scaleX(0.7);}
+	30%{transform: scaleX(0.5);}
+	40%{transform: scaleX(1.0);}
+	50%{transform: scaleX(0.9);}
+	60%{transform: scaleX(0.5);}
+	70%{transform: scaleX(1.0);}
+	80%{transform: scaleX(0.7);}
+	90%{transform: scaleX(0.6);}
+	100%{transform:scaleX(1.0);}
+}
+@keyframes squeeze2{
+	0%{transform:  scaleX(1.0);}
+	10%{transform: scaleX(0.7);}
+	20%{transform: scaleX(1.0);}
+	30%{transform: scaleX(0.5);}
+	40%{transform: scaleX(0.7);}
+	50%{transform: scaleX(1.0);}
+	60%{transform: scaleX(0.8);}
+	70%{transform: scaleX(0.8);}
+	80%{transform: scaleX(0.5);}
+	90%{transform: scaleX(1.0);}
+	100%{transform:scaleX(1.0);}
+}
+@keyframes squeeze3{
+	0%{transform:  scaleX(1.0);}
+	10%{transform: scaleX(0.7);}
+	20%{transform: scaleX(1.0);}
+	30%{transform: scaleX(0.8);}
+	40%{transform: scaleX(1.0);}
+	50%{transform: scaleX(0.5);}
+	60%{transform: scaleX(1.0);}
+	70%{transform: scaleX(0.9);}
+	80%{transform: scaleX(1.0);}
+	90%{transform: scaleX(0.6);}
+	100%{transform:scaleX(1.0);}
+}
+
+.custom-link{
+  @apply underline;
+}
+.custom-link::after {
   content: '';
   position: absolute;
-  width: 4px;
-  height: 100%;
-  background-color: #fff;
-  animation: cursor 0.6s linear infinite alternate;
-  will-change: opacity;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f00ff0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
-@keyframes cursor {
-  0%,
-  40% {
-    opacity: 1;
-  }
 
-  60%,
-  100% {
-    opacity: 0;
-  }
+.custom-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
+
 .wave {
-  animation: wave 2s linear;
+  animation: wavelong 10s linear infinite;
   transform-origin: bottom;
 }
 .wave:hover {
   animation: wave 2s linear infinite;
   transform-origin: bottom;
 }
+@keyframes wavelong {
+  0% { transform: translateY(0) rotate(0deg); }
+  1% { transform: translateY(-6px) rotate(-5deg); }
+  2% { transform: translateY(0) rotate(3deg); }
+  3% { transform: translateY(-2px) rotate(-3deg); }
+  4% { transform: translateY(0) rotate(2deg); }
+  5% { transform: translateY(-1px) rotate(-1deg); }
+  6% { transform: translateY(0) rotate(1deg); }
+  7% { transform: translateY(-1px) rotate(-1deg); }
+  8% { transform: translateY(0) rotate(1deg); }
+  9% { transform: translateY(-1px) rotate(-1deg); }
+  10% { transform: translateY(0) rotate(0deg); }
+  11% { transform: translateY(0) rotate(0deg); }
+}
 @keyframes wave {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  10% {
-    transform: translateY(-6px) rotate(-5deg);
-  }
-  20% {
-    transform: translateY(0) rotate(3deg);
-  }
-  30% {
-    transform: translateY(-2px) rotate(-3deg);
-  }
-  40% {
-    transform: translateY(0) rotate(2deg);
-  }
-  50% {
-    transform: translateY(-1px) rotate(-1deg);
-  }
-  60% {
-    transform: translateY(0) rotate(1deg);
-  }
-  70% {
-    transform: translateY(-1px) rotate(-1deg);
-  }
-  80% {
-    transform: translateY(0) rotate(1deg);
-  }
-  90% {
-    transform: translateY(-1px) rotate(-1deg);
-  }
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
+  0% { transform: translateY(0) rotate(0deg); }
+  10% { transform: translateY(-6px) rotate(-5deg); }
+  20% { transform: translateY(0) rotate(3deg); }
+  30% { transform: translateY(-2px) rotate(-3deg); }
+  40% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-1px) rotate(-1deg); }
+  60% { transform: translateY(0) rotate(1deg); }
+  70% { transform: translateY(-1px) rotate(-1deg); }
+  80% { transform: translateY(0) rotate(1deg); }
+  90% { transform: translateY(-1px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 .animateReader{
 	color: transparent;
@@ -104,3 +151,4 @@
 		background-image:purple; 
 	}
 }
+

@@ -1,3 +1,104 @@
+a{
+  @apply transition duration-300 underline decoration-solid decoration-1 hover:text-purple dark:hover:text-yellow;
+}
+
 .FullLine:hover {
 	user-select: all;
+}
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+	background:white;
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+} 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.fadeInVariable{
+  animation: fadeInKeys 1s ease 1;
+}
+.growIn { animation: growInKeys 300ms ease 1; }
+.fadeIn { animation: fadeInKeys 300ms ease 1; }
+.fadeInLeft { animation: fadeInLeftKeys 1s ease 1; }
+.fadeInRight { animation: fadeInLeftKeys 1s ease 1; }
+@keyframes growInKeys{ 0%{opacity:0;transform:scale(0);} 10%{opacity:0;transform:scale(0);} 100%{opacity:1;transform:scale(1);} }
+@keyframes fadeInKeys{ 0%{opacity:0;} 40%{opacity:0;} 100%{opacity:1;} }
+@keyframes fadeInLeftKeys{ 0%{opacity:0;transform:translateX(-500px);} 10%{opacity:0;transform:translateX(-500px);} 100%{opacity:1;} }
+@keyframes fadeInRightKeys{ 0%{opacity:0;transform:translateX(500px);} 10%{opacity:0;transform:translateX(500px);} 100%{opacity:1;} }
+
+
+
+table{
+	border-collapse: collapse;
+	border-radius: 5px;
+	border-style: hidden; /* hide standard table (collapsed) border */
+	box-shadow: 0 0 0 0px #000; /* this draws the table border  */ 
+	overflow:hidden;
+	display:table;
+	background-color:black;
+
+}
+.cellBase{
+  border-radius:0px;
+  width:20px;
+  height:20px;
+}
+.ground {
+  background-color: black;
+}
+.apple {
+  background-color: red;
+}
+.body {
+  background-color: green;
+}
+.yellow {
+  background-color: yellow;
+}
+.path {
+  display:table;
+  margin:auto;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: yellow;
 }

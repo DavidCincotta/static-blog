@@ -1,6 +1,5 @@
-import React, {useEffect, useContext} from 'react'
+import {useEffect, useContext} from 'react'
 import { ThemeContext } from '../pages/_app'
-import reducer from './reducer'
 export default function GlobalScripts(){
 	const {state,dispatch} = useContext(ThemeContext)
 	const setTheme = (useLight:boolean) => {
@@ -16,9 +15,17 @@ export default function GlobalScripts(){
 	useEffect(
 		()=>{
 			let userPrefDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-			let userChoice = 'false'
-			userChoice = document.cookie
-			if(userPrefDark && userChoice!='true'){
+			let userChooseLight = document.cookie.includes('true')
+			let userChooseDark = document.cookie.includes('false')
+			if(userChooseDark){
+				document.documentElement.classList.add('dark')
+				setDark();
+				return
+			}
+			if(userChooseLight){
+				return
+			}
+			if(userPrefDark){
 				document.documentElement.classList.add('dark')
 				setDark();
 				return

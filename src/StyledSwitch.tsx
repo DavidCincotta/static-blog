@@ -1,26 +1,14 @@
-import React, {useEffect,useContext} from 'react'
+import {useContext} from 'react'
 //import {Switch} from '@mui/material'
 import {Switch} from '@mui/material'
-import {MdLightMode, MdOutlineDarkMode} from 'react-icons/md'
 import DarkMode from '@mui/icons-material/DarkMode';
 import LightMode from '@mui/icons-material/LightMode';
-import { styled } from '@mui/material/styles';
 import { ThemeContext } from '../pages/_app'
-import reducer from './reducer'
 export default function StyledSwitch(){
 	const {state,dispatch} = useContext(ThemeContext)
-		const setDark = (useLight:boolean) => {
-			dispatch({ type: "setDark", value:false });
-		};
-	const setLight = (useLight:boolean) => {
-		dispatch({ type: "setLight", value:true });
-	};
-	const toggle = () => {
-		dispatch({ type: "toggleTheme", value:true });
-	}
 	const toggleTheme = () => {
 		document.documentElement.classList.toggle("dark")
-		if(document.cookie==='true')document.cookie='false'
+		if(document.cookie.includes('true')) document.cookie='false'
 		else document.cookie='true'
 		dispatch({type: "toggleTheme"})
 	};
