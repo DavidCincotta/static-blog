@@ -64,7 +64,7 @@ export function WakaCodeObjToData(waka: WakaCodeObj) {
       backgroundColor: (context: ScriptableContext<"line">) => {
         const ctx = context.chart.ctx
         const gradient = ctx.createLinearGradient(0, 0, 0, context.chart.height)
-        console.log(context.dataIndex)
+        //console.log(context.dataIndex)
         gradient.addColorStop(0.0, `rgb(255,${context.dataIndex*4  },0  ,1.9)`);
         gradient.addColorStop(1.0, `rgb(0  ,${context.dataIndex*4  },255,1.9)`);
         return gradient;

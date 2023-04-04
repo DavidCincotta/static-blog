@@ -60,7 +60,7 @@ const histogramOptions = (propTitle?:string,propYTitle?:string,propXTitle?:strin
         duration:xdur,
         easing: 'linear',
         from: (ctx:any) => {
-          console.log(ctx)
+          //console.log(ctx)
           swapData = !swapData
           return swapData?0:2000;
         },
@@ -263,9 +263,9 @@ export function AnimatedBarChart(props:{data:Function,className?:string,title?:s
       setInterval(incrementDataset,4000)
       const chart = chartRef.current
       //@ts-ignore
-      console.log( chart.options.transitions.hide)
+      //console.log( chart.options.transitions.hide)
       //@ts-ignore
-      console.log( chart.options)
+      //console.log( chart.options)
     }
     animationCalled = true
   },[])

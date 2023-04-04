@@ -16,15 +16,15 @@ export const Wakatime = () => {
   }
   useEffect(()=>{
     const response = fetchWakaData()
-    console.log('response wakatime')
-    console.log(response)
+    //console.log('response wakatime')
+    //console.log(response)
     response.then((data)=>{
       setCodeData(data.code)
       setLanguagesData(data.languages)
-      console.log(data)
+      //console.log(data)
     }).catch((e)=>{
-      console.log("error in response")
-      console.log(e)
+      //console.log("error in response")
+      //console.log(e)
     })
   },[])
   return (
@@ -40,9 +40,9 @@ export const Wakatime = () => {
   <br />
   <pre className="text-sm">Primary OS:    Linux</pre>
   <br />
-  <pre className="text-sm">Main Editor:   nVim</pre>
+  <pre className="text-sm">Main Editor:   Neovim</pre>
   <br />
-  <pre className="text-sm">Leetcode:      34 Problems</pre>
+  <pre className="text-sm">Leetcode:      36 Problems</pre>
   <br />
   <p className="text-lg">About WakaTime</p>
   <br />

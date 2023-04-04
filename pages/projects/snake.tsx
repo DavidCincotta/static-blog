@@ -157,7 +157,7 @@ class Snake extends React.Component<any,any>  {
 			this.row=parseInt(this.props.row);
 			this.col=parseInt(this.props.col);
 		}
-		console.log('start init')
+		//console.log('start init')
 		this.board = Array(this.row).fill(Array(this.col).fill(0));
 		this.board = this.board.map((list)=>{return list.map((el)=>{return 'ground'})});
 		this.gradient = Array(this.searchParamList.length).fill(0)

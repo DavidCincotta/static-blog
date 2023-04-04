@@ -18,7 +18,7 @@ export default function CodeBlock(props: { text: string, lang: string, addClass?
 			// @ts-ignore
 			for (let s of htmlcollection) { lines.push(s.innerText.slice(1)); }
 			const formatted = lines.join('\n');
-			console.log(1);
+			//console.log(1);
 			navigator.clipboard.writeText(formatted);
 		}
 		catch (e) {

@@ -22,7 +22,6 @@ export const histogramOptions=
         duration:xdur,
         easing: 'linear',
         from: (ctx:any) => {
-          console.log(ctx)
           swapData = !swapData
           return swapData?0:2000;
         },

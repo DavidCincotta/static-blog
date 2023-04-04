@@ -4,27 +4,24 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '../src/createEmotionCache';
 import Script from 'next/script'
-
+//TODO Fix google analytics link
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en" className={roboto.className}>
-        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-ERF7L9QHC7" />
-        <Script strategy="lazyOnload">
-{`window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-	gtag('js',new Date());
-	gtag('config','G-ERF7L9QHC7',{
-		page_path: window.location.pathname,
-	}
-); `}
-        </Script>
         <Head>
           {/* PWA primary color */}
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="emotion-insertion-point" content="" />
           {(this.props as any).emotionStyleTags}
         </Head>
+        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-ERF7L9QHC7" />
+        <Script strategy="lazyOnload">
+{`window.dataLayer=window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-ERF7L9QHC7');`}
+        </Script>
         <body className="font-mono text-lightTextPrimary dark:dark-darkTextPrimary bg-lightBackground dark:bg-darkBackground transition duration-300">
           <Main />
           <NextScript />
