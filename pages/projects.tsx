@@ -34,7 +34,7 @@ export default function About() {
 					<p className="absolute top-1 left-1 text-white m-2">2022</p>
 					<p className="absolute bottom-1 right-1 text-white m-2 text-xs">Tags: Python 3, C++, Simulation</p>
 				</div>
-				<a href="/projects/cardsim.html" id="avatar-back" className="no-underline text-lightTextPrimary dark:text-darkTextPrimary hide-scrollbar overflow-scroll flip-card-back flip-card-back-scroll bg-lightBackgroundTwo dark:bg-darkBackgroundTwo self-center rounded-[10px] shadow-lg shadow-purple dark:shadow-orange dark:shadow-orange m-5 w-[350px] h-[350px] grid grid-cols-1 auto-rows-min gap-0" >
+				<a href="/projects/cardsim.html" id="avatar-back" className="no-underline text-lightTextPrimary dark:text-darkTextPrimary hide-scrollbar overflow-scroll flip-card-back flip-card-back-scroll bg-lightBackgroundTwo dark:bg-darkBackgroundTwo self-center rounded-[10px] shadow-lg shadow-purple dark:shadow-orange m-5 w-[350px] h-[350px] grid grid-cols-1 auto-rows-min gap-0" >
 					<div className="w-4/5 place-self-center">
 					<p className="text-center m-2 text-xl font-bold text-lightTextPrimary dark:text-darkTextPrimary"><br/>Card Shuffling Exploration</p>
 					</div>
@@ -54,7 +54,7 @@ export default function About() {
 					<p className="absolute top-1 left-1 text-white m-2">2023</p>
 					<p className="absolute bottom-1 right-1 text-white m-2 text-xs">Tags: Typescript, npm, architecture, AWS</p>
 				</div>
-				<a href="/projects/devblog.html" id="avatar-back" className="no-underline text-lightTextPrimary dark:text-darkTextPrimary hide-scrollbar overflow-scroll flip-card-back flip-card-back-scroll bg-lightBackgroundTwo dark:bg-darkBackgroundTwo self-center rounded-[10px] shadow-lg shadow-purple dark:shadow-orange dark:shadow-orange m-5 w-[350px] h-[350px] grid grid-cols-1 auto-rows-min gap-0" >
+				<a href="/projects/devblog.html" id="avatar-back" className="no-underline text-lightTextPrimary dark:text-darkTextPrimary hide-scrollbar overflow-scroll flip-card-back flip-card-back-scroll bg-lightBackgroundTwo dark:bg-darkBackgroundTwo self-center rounded-[10px] shadow-lg shadow-purple dark:shadow-orange m-5 w-[350px] h-[350px] grid grid-cols-1 auto-rows-min gap-0" >
 					<div className="w-4/5 place-self-center">
 					<p className="text-center my-2 text-xl font-bold text-lightTextPrimary dark:text-darkTextPrimary"><br/>Personal Website & AWS</p>
 					</div>

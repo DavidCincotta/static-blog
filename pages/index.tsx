@@ -29,7 +29,7 @@ Thanks for visiting!
 My name is David, When
 I'm not at my desk, 
 you can find me at the 
-climbing gym or a café
+climbing gym or a café.
  
 Thanks for visiting!
 `;
@@ -48,7 +48,7 @@ Thanks for visiting!
 					<div className="col-span-8 mobile:my-8">
 					<p className="text-3xl">About</p>
 					<br />
-					<p>I graduated in January 2023 from the University of Massachusetts Amherst with a BS in Computer Science. The best way to contact me is through email.</p>
+					<p>Graduated in January 2023 from the University of Massachusetts Amherst with a BS in Computer Science. The best way to contact me is through email.</p>
 					</div>
 					<div className=" pb-3 col-span-2 rounded-[10px] h-fit ring-1 ring-black dark:ring-white">
 					<Footer />

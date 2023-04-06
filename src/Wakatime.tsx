@@ -5,6 +5,8 @@ import { WakaTimeBarChart, WakaTimePieChart } from './Charts'
 export const Wakatime = () => {
   const [languagesData, setLanguagesData] = useState<Object|null>(null)
   const [codeData, setCodeData] = useState<Object|null>(null)
+  const [hours, setHours] = useState<string|null>(null)
+  const [mins, setMins] = useState<string|null>(null)
   async function fetchWakaData(){
     try{
       const waka_code_lang = await fetch(waka_data)
@@ -21,6 +23,8 @@ export const Wakatime = () => {
     response.then((data)=>{
       setCodeData(data.code)
       setLanguagesData(data.languages)
+      setHours(data.hours)
+      setMins(data.mins)
       //console.log(data)
     }).catch((e)=>{
       //console.log("error in response")
@@ -44,9 +48,13 @@ export const Wakatime = () => {
   <br />
   <pre className="text-sm">Leetcode:      36 Problems</pre>
   <br />
+  <pre className="text-sm">Waka Total:    {hours} hrs {mins} mins</pre>
+  <br />
   <p className="text-lg">About WakaTime</p>
   <br />
-  <p className="text-sm">This is a tool that tracks active usage of editors and coding projets. The 'Broswer' language category for documentation and other development sites. Specific domains have been categorized as a "language" due to their importance.</p>
+  <p className="text-sm">This is a tool that tracks active usage of editors and coding projets I started tracking my time with this tool March 2023.</p>
+  <br />
+  <p className="text-sm"> The 'Broswer' language category for documentation and other development sites. Specific domains have been categorized as a "language" due to their importance.</p>
   <br />
   <p className="text-sm">This is important to note since I use Jupyter notebook as my primary Python IDE. This will appear as "localhost" alongside my standard web development activity.</p>
 </div>
