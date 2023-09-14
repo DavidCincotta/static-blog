@@ -24,6 +24,7 @@ function embedsToCode(e: string[], height: number) {
 function spotifyEmbeds(x: number) {
 
 	const embeds = [
+		"4O7w61hsJmBJqxNFXA7Kyb",
 		"623rRTKwGmgjH6sjE9uWLh",
 		"4iPbRSHwmwk7uuFsxkCizq",
 		"65r94rVdiMwqXyQFEr3tqT",
