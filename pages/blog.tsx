@@ -12,13 +12,11 @@ export default function Blog() {
 				<div className="text-center text-3xl text-black dark:text-white">
 					<p>Technical Posts</p>
 					<div className="m-5 text-base text-left rounded-[10px] ring-2 ring-black dark:ring-white grid divide-y divide-dashed">
-					{ true?<></>:
 						<div className="m-5">
-							<p><a href="/blog/tech/wikibattles.html" className={linkString}>Parsing Wikipedia with GPT</a></p>
+							<p><a href="/blog/tech/rustforay.html" className={linkString}>Foray Into Rust</a></p>
 							<br />
-							<p className="">Tags: Python3, GPT, Wikipedia Library, Jupyter Lab</p>
+							<p className="">Tags: Rust, Crypto, Multithreading, Tokio, asyncio</p>
 						</div>
-					}
 						<div className="m-5">
 							<p><a href="/blog/tech/wakatime.html" className={linkString}>WakaTime in Everything</a></p>
 							<br />

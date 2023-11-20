@@ -5,11 +5,14 @@ export default function Menu() {
         <a className="text-black dark:text-white hover:text-purple dark:hover:text-yellow" href="/blog.html">Blog</a>
         <a className="text-black dark:text-white hover:text-purple dark:hover:text-yellow" href="/projects.html">Projects</a>
         <a className="text-black dark:text-white hover:text-purple dark:hover:text-yellow" href="/">Home</a>
+        <a className="group-hover:opacity-100 text-black dark:text-white hover:text-purple dark:hover:text-yellow" href="/David_Cincotta_Resume_v2.0.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
         <a className="invisible opacity-0 group-hover:opacity-100 text-black dark:text-white hover:text-purple dark:hover:text-yellow" href="/about.html">About</a>
       </div>
     </>
   );
 }
+// how to open a link in a new tab example
+// <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
 /*
  * removed hovering to show links because it is less user friendly.
 
