@@ -16,20 +16,14 @@ export default function Home() {
 My name is David, I'm a developer who loves to build things, be it with code, wood, or leather.
 When I'm not at my desk, you can find me at the climbing gym or at the library. 
  
-Recently I've been tutoring on the platform Wyzant, and working for the AI startup Umshini.
-
-I've taught everything from intro courses programming courses, to capstone courses in
-many diciplines of computer science
+The biggest passion in my life is teaching, for the past year I have been tutoring
+students in computer science on the platform Wyzant, "To teach once is to learn twice"
  
-    Digital Forensics
-    Kernel Development
-    Database Design
-    Algorithms
+In my careeer I have worked on a variety of projects, from digital currency, web development,
+and even a little bit of machine learning.
  
-At Umshini I do research and development on new approaches to red teamming LLMs.
-
-A new hobby of mine is midi and Orca, a visual programming language for music.
-Through this I've been able to create some interesting music, and I'm excited to see where it goes.
+Outside of work and hobbies, experimenting with new technology and languages has always been fun.
+Here are some of my favorite topics: simulations, programmatic music and art, llm agents, and UI
  
 Thanks for visiting!
 `;
@@ -59,7 +53,7 @@ Thanks for visiting!
 						<p className="text-3xl">About</p>
 						<br />
 						<p>Graduated in January 2023 from the University of Massachusetts Amherst with a BS in Computer Science.</p>
-						<p>You can read my resume <a href="/David_Cincotta_Resume_v2.0.pdf">here</a></p>
+						<p>You can read my resume <a className="font-bold text-[#064e3b] dark:text-[#34d399]" href="/David_Cincotta_Resume_v3.0.pdf">here</a></p>
 					</div>
 					<div className=" pb-3 col-span-2 rounded-[10px] h-fit ring-1 ring-black dark:ring-white">
 						<Footer />

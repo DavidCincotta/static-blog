@@ -241,7 +241,7 @@ function delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
 }
 export function AnimatedBarChart(props:{data:Function,className?:string,title?:string,yaxis?:string,xaxis?:string,showTooltip?:boolean,showLegend?:boolean}) {
-  const chartRef = useRef<ChartJS>(null);
+  const chartRef = useRef<ChartJS|null>(null);
   const { state } = useContext(ThemeContext);
   let currentDataSet:number = 0
   let lastDataSet:number = -1
@@ -269,6 +269,7 @@ export function AnimatedBarChart(props:{data:Function,className?:string,title?:s
     }
     animationCalled = true
   },[])
+  // @ts-ignore
   return <> <Bar ref={chartRef} onTimeUpdate={incrementDataset} className={" rounded-[10px] p-4"+props.className}  options={histogramOptions(props.title,props.yaxis,props.xaxis,props.showTooltip,props.showLegend,false,false,1000,1000)} data={props.data(state.useLight,currentDataSet)} /> </>
 }
 export function LineChart(props:{data:Function,xaxis?:string,yaxis?:string,className?:string,height?:string,width?:string,title?:string,showTooltip?:boolean,y1title?:string,showLegend?:boolean,options?:Function}){
@@ -281,6 +282,7 @@ export function LineChart(props:{data:Function,xaxis?:string,yaxis?:string,class
 export function WakaTimePieChart(props:{data:WakaLangObj,title?:string,showLegend:boolean,className?:string}){
   const chartRef = useRef<ChartJS>(null);
   const { state } = useContext(ThemeContext);
+  //@ts-ignore
   return (<><Pie id="WakaPieChart" className={props.className} data={WakaObjToData(props.data)} options={PieOptions(props.title,props.showLegend)}/></>)
 }
 export function WakaTimeBarChart(props:{data:WakaCodeObj,className?:string,title?:string,isMobile?:boolean}){

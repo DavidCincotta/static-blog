@@ -76,6 +76,7 @@ export function WakaObjToData(waka: WakaLangObj) {
   const data: number[] = []
   const color: string[] = []
   for (const obj of waka.data) {
+    if(obj.name=='Other') continue
     labels.push(obj.name)
     data.push(obj.percent)
     color.push(obj.color)

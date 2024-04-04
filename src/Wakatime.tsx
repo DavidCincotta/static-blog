@@ -18,7 +18,7 @@ export const Wakatime = () => {
 	}
 	useEffect(() => {
 		const response = fetchWakaData()
-		console.log(response)
+		// console.log(response)
 		//console.log('response wakatime')
 		//console.log(response)
 		response.then((data) => {
@@ -41,23 +41,17 @@ export const Wakatime = () => {
 						<div className="p-8 col-start-2 mobile:p-0">
 							<p className="text-lg font-black">General Stats:</p>
 							<br />
-							<pre className="text-sm">Primary OS:    	Linux</pre>
-							<br />
-							<pre className="text-sm">Main Editor:   	Neovim</pre>
-							<br />
-							<pre className="text-sm">Leetcode:      	68 Problems</pre>
-							<br />
 							<pre className="text-sm">Waka Total:    	{hours} hrs {mins} mins</pre>
 							<br />
-							<pre className="text-sm">Wyzant Rating: 	5.0 stars, 30 impressions</pre>
+							<pre className="text-sm">Wyzant Rating: 	4.9 stars, 137 impressions</pre>
 							<br />
-							<pre className="text-sm">Wyzant Students:	72 Students</pre>
+							<pre className="text-sm">Wyzant Students:	80+ Students</pre>
 							<br />
-							<pre className="text-sm">Wyzant Total:  	275 hrs</pre>
+							<pre className="text-sm">Wyzant Total:  	549 hrs</pre>
 							<br />
 							<p className="text-lg">About WakaTime</p>
 							<br />
-							<p className="text-sm">This is a tool that tracks active usage of editors and coding projets I started tracking my time with this tool March 2023.</p>
+							<p className="text-sm">This is a tool that tracks active usage of editors and coding projets I started tracking my time with this tool March 2023. My time on Wyzant is not tracked, just time spent actively typing.</p>
 						</div>
 						{codeData ?
 							<div className="col-start-1 col-span-2 p-10 w-[80%] max-w-[24cm] mx-auto mobile:p-0 mobile:w-[100%]"><WakaTimeBarChart data={codeData as WakaCodeObj} title={"Hours Coding Last 30 Days"} isMobile={screen.width < 500} /></div>
