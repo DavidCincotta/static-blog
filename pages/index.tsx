@@ -53,7 +53,7 @@ Thanks for visiting!
 						<p className="text-3xl">About</p>
 						<br />
 						<p>Graduated in January 2023 from the University of Massachusetts Amherst with a BS in Computer Science.</p>
-						<p>You can read my resume <a className="font-bold text-[#064e3b] dark:text-[#34d399]" href="/David_Cincotta_Resume_v3.0.pdf">here</a></p>
+						<p>You can read my resume <a className="font-bold text-[#064e3b] dark:text-[#34d399]" href="/David_E_Cincotta_Resume.pdf">here</a></p>
 					</div>
 					<div className=" pb-3 col-span-2 rounded-[10px] h-fit ring-1 ring-black dark:ring-white">
 						<Footer />
